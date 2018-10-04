@@ -15,11 +15,16 @@
         accept_hostkey: yes
         update: yes
 
-    - name: Run Terraform
-      command: terraform apply main.tf
+    - name: Run Terraform Init
+      command: terraform init
+      args:
+        chdir: /test
+
+    - name: Run Terraform Apply
+      command: terraform apply -auto-approve
       register: myout
       args:
         chdir: /test
-    
+
     - debug:
         msg: "{{ myout.stdout_lines }}" 
