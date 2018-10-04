@@ -6,7 +6,7 @@
   tasks:       
     - name: Simple Output
       debug:
-        msg: "Hello {{ myname }} ."
+        msg: "Hello {{ myname }}."
         
     - name: Clone/pull from github
       git:
