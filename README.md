@@ -13,3 +13,4 @@ docker build -t ansible-terraform .
 docker run --rm -v ${PWD}:/ansible/playbooks ansible-terraform -i localhost test.yaml
 ```
 
+This should yield a file called success.txt in the local directory
