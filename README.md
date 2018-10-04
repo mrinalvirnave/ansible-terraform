@@ -10,6 +10,6 @@ docker build -t ansible-terraform .
 ## Usage
 
 ```
-docker run --rm -v ${pwd}:/ansible/playbooks ansible-terraform -i localhost test.yaml
+docker run --rm -v ${PWD}:/ansible/playbooks ansible-terraform -i localhost test.yaml
 ```
 

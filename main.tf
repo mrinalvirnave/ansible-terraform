@@ -1,7 +1,7 @@
 provider "local" {}
 
 resource "local_file" "foo" {
-    content     = "Hello World!"
-    filename = "/ansible/playbook/success.txt"
+    content     = "This file shows that the docker container was succesful in downloading and running a Terraform config using Ansible!"
+    filename = "/ansible/playbooks/success.txt"
 }
 
