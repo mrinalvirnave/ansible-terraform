@@ -1,0 +1,25 @@
+- hosts: "127.0.0.1"
+  gather_facts: no
+  vars:
+    myname: "world"
+
+  tasks:       
+    - name: Simple Output
+      debug:
+        msg: "Hello {{ myname }} ."
+        
+    - name: Clone/pull from github
+      git:
+        repo: https://github.com/mrinalvirnave/ansible-terraform.git
+        dest: "/test"
+        accept_hostkey: yes
+        update: yes
+
+    - name: Run Terraform
+      command: terraform apply main.tf
+      register: myout
+      args:
+        chdir: /test
+    
+    - debug:
+        msg: "{{ myout.stdout_lines }}" 
