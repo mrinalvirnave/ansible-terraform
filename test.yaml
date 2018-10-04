@@ -27,4 +27,4 @@
         chdir: /test
 
     - debug:
-        msg: "{{ myout.stdout_lines }}" 
+        msg: "{{ myout.stdout }}" 
